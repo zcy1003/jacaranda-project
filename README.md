@@ -2,7 +2,8 @@
 
 一个可交互的 3D 微缩街角：奶油白三层小楼、连续弧形铁艺阳台、四棵各具姿态的蓝花楹，以及紫色长椅和暖灯。采用英文生活方式杂志排版。
 
-**网页地址：<https://zcy1003.github.io/jacaranda-project/>**  
+**网页地址：<https://zcy1003.github.io/jacaranda-project/>**
+
 **源码仓库：<https://github.com/zcy1003/jacaranda-project>**
 
 ![场景预览](assets/preview.png)
