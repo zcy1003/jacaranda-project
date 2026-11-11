@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="A small, quiet Sydney corner in jacaranda season. An interactive illustrated diorama, from daylight to the glow of evening.">
+  <title>The Jacaranda Edit — Slow Corners</title>
+  <style>/* EMBED_FONTS */
+/* EMBED_STYLES */</style>
+</head>
+<body>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5m0-14.2-1.5 1.5M6.4 17.6l-1.5 1.5"/></symbol>
+  <symbol id="dusk" viewBox="0 0 24 24"><path d="M3 16h18M5 20h14M7 16a5 5 0 0 1 10 0M12 3v3M3 9l2 2m16-2-2 2"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M19.5 15.7A8.6 8.6 0 0 1 8.3 4.5a8.6 8.6 0 1 0 11.2 11.2Z"/><path d="M17 3v4m-2-2h4"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+  <symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="home" viewBox="0 0 24 24"><path d="m4 11 8-7 8 7M6 10v10h12V10M10 20v-6h4v6"/></symbol>
+  <symbol id="pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+  <symbol id="camera" viewBox="0 0 24 24"><path d="M8 6 9.5 4h5L16 6h4v14H4V6Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="expand" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5"/></symbol>
+  <symbol id="orbit" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-25 12 12)"/><path d="M9 3c4-2 8 17 5 18"/></symbol>
+  <symbol id="leaf" viewBox="0 0 36 40"><path d="M10 36C20 23 16 12 28 3M17 25C4 25 3 17 7 15c5-1 10 4 10 10Zm2-8c-6-7-4-13-1-13 5 1 4 9 1 13Zm1 4c11-8 15-3 11 1-2 3-7 3-11-1Z"/></symbol>
+</defs></svg>
+<div class="page-shell">
+  <header class="masthead">
+    <a class="brand" href="#" aria-label="Slow Corners, return to the opening view"><svg class="brand-sprig"><use href="#leaf"/></svg><span>slow corners<span class="brand-period">.</span></span></a>
+    <span class="masthead-center">A JOURNAL OF PLACES &amp; PAUSES</span>
+    <div class="issue"><span>THE SEASONAL EDIT</span><span class="issue-number">No. 08</span></div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="editorial">
+        <div class="eyebrow"><span class="tiny-rule"></span> SYDNEY, IN BLOOM</div>
+        <h1 id="hero-title">Where the<br>city turns<br><em>lilac.</em></h1>
+        <p class="intro">A familiar corner, a fleeting season.<br> Cream façades, purple canopies,<br> and a little room to slow down.</p>
+        <button class="closer-link" id="closer"><span class="round-arrow"><svg><use href="#arrow"/></svg></span><span>Stay a little longer</span></button>
+        <div class="editorial-bottom"><span class="location-mark">↗</span><div><span class="small-label">AN IMAGINED SYDNEY CORNER</span><span class="location-sub">Spring, at its own pace.</span></div></div>
+      </div>
+
+      <div class="scene-column">
+        <div class="scene-topline"><span class="scene-label"><span class="live-dot"></span> THE JACARANDA EDIT</span><span class="scene-edition">33° S &nbsp; / &nbsp; 151° E</span></div>
+        <div class="scene-wrap" id="scene-wrap">
+          <div class="scene-halo" aria-hidden="true"></div>
+          <canvas id="scene" tabindex="0" role="img" aria-label="Interactive three-dimensional Sydney street corner, with a cream three-storey house, curving iron balconies, a purple bench and branching jacaranda trees. Drag to rotate, scroll to zoom. Arrow keys rotate; plus and minus zoom; R resets the view; 1, 2 and 3 change the light."></canvas>
+          <div class="loading" id="loading"><svg class="loading-sprig"><use href="#leaf"/></svg><span>A little corner is coming to life…</span></div>
+          <div class="render-error" id="render-error" hidden><h2>A moment, please.</h2><p>This little world needs WebGL. Open this file in a recent version of Chrome, Edge, Firefox or Safari with hardware acceleration enabled.</p><button id="retry">Try again</button></div>
+          <div class="scene-caption"><span class="caption-index">01</span><span id="view-caption">The art of taking a pause.</span></div>
+          <div class="view-tools" aria-label="View controls"><button id="zoom-in" class="tool" aria-label="Zoom in" title="Zoom in (+)"><svg><use href="#plus"/></svg></button><button id="zoom-out" class="tool" aria-label="Zoom out" title="Zoom out (−)"><svg><use href="#minus"/></svg></button><span class="tool-divider"></span><button id="reset-view" class="tool" aria-label="Reset view" title="Return to the opening view (R)"><svg><use href="#home"/></svg></button><button id="fullscreen" class="tool" aria-label="Expand the scene" title="Expand the scene"><svg><use href="#expand"/></svg></button></div>
+          <div class="scene-hint"><svg><use href="#orbit"/></svg><span>Drag to wander <i>·</i> Scroll to get closer</span></div>
+        </div>
+        <div class="experience-bar">
+          <div class="light-controls" role="group" aria-label="Time of day">
+            <button data-time="0" aria-pressed="false"><svg><use href="#sun"/></svg><span>Day</span></button>
+            <button data-time="0.5" aria-pressed="true" class="active"><svg><use href="#dusk"/></svg><span>Dusk</span></button>
+            <button data-time="1" aria-pressed="false"><svg><use href="#moon"/></svg><span>Night</span></button>
+          </div>
+          <div class="light-caption"><span id="light-moment">LAVENDER HOUR</span><span class="light-caption-line"></span><span id="scene-clock">5:45 PM</span></div>
+          <div class="extra-controls"><button id="motion" class="tool" aria-label="Pause falling petals" aria-pressed="false" title="Pause falling petals"><svg><use href="#pause"/></svg></button><button id="postcard" class="tool postcard-button" aria-label="Save a postcard" title="Save a postcard"><svg><use href="#camera"/></svg><span>Keep this moment</span></button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="field-notes" aria-label="Explore three small details">
+      <div class="notes-title"><span class="small-label">SMALL DETAILS,</span><span class="notes-serif">a sense of place.</span></div>
+      <button class="note active" data-view="house" aria-pressed="true"><span class="note-number">01</span><span class="note-copy"><span class="note-title">The corner house</span><span class="note-desc">Soft curves. A century of stories.</span></span><svg><use href="#arrow"/></svg></button>
+      <button class="note" data-view="bloom" aria-pressed="false"><span class="note-number">02</span><span class="note-copy"><span class="note-title">Under the jacarandas</span><span class="note-desc">A lilac canopy, open to the sky.</span></span><svg><use href="#arrow"/></svg></button>
+      <button class="note" data-view="bench" aria-pressed="false"><span class="note-number">03</span><span class="note-copy"><span class="note-title">Nowhere else to be</span><span class="note-desc">One purple bench. All afternoon.</span></span><svg><use href="#arrow"/></svg></button>
+    </section>
+  </main>
+  <footer><span>For the places that make us pause.</span><span>A SMALL WORLD, MADE TO WANDER.</span><span class="footer-petal">✳</span></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>/* EMBED_VENDOR */</script>
+<script>/* EMBED_SCENE */</script>
+</body>
+</html>
